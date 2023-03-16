@@ -50,8 +50,8 @@ const Selector = (props) => {
     },
   };
 
-  const btnSelect = (e) => {
-    props.selectAscii(AvailableAssci[e.target.parentElement.id]);
+  const btnSelect = (asciiKey) => {
+    props.selectAscii(AvailableAssci[asciiKey]);
     props.changeAscii();
   };
 
@@ -60,7 +60,7 @@ const Selector = (props) => {
       {AvailableAssci[asciiKey].SelectedAsciiName.map((row, index) => (
         <pre key={index}>{row}</pre>
       ))}
-      <button onClick={btnSelect} className={style.SelectorButton}>
+      <button onClick={() => btnSelect(asciiKey)} className={style.SelectorButton}>
         Select
       </button>
     </div>
