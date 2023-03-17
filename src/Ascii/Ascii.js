@@ -12,16 +12,12 @@ const Ascii = () => {
   const [asciiList, setAsciiList]     = useState([]);
 
   const changeAscii = () => {
-    if (pageSwitch) {
-      setPageSwitch(false);
-    } else {
-      setPageSwitch(true);
-    }
+      setPageSwitch((prev) => !prev);
+
   };
   const selectAsciiTransfer = (value) => {
     setSelectAscii(value);
   };
-
   const submitAscii = (value) => {
     setAsciiList((prev) => [...prev, value]);
   };

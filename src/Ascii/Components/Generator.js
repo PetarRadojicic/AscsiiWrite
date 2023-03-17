@@ -69,7 +69,7 @@ const Generator = (props) => {
     const regex = new RegExp(InputlRef.current.pattern);
     const value = InputlRef.current.value;
     if (!regex.test(value)) {
-        setAlertShow((prevAlertShow) => !prevAlertShow);
+        setAlertShow((prev) => !prev);
       InputlRef.current.style.borderColor = "red";
     } else {
       props.submitAscii(asciiOutput);
